@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply mx-5 sm:mx-auto my-5 text-center prose;
+	@apply flex flex-col items-center;
+}
+
+button#open-modal, button.primary, button.loading {
+	@apply rounded-md px-5 py-2.5 shadow-sm;
+	@apply bg-indigo-600 hover:bg-indigo-500;
+	@apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+	@apply text-2xl font-semibold text-white;
+}
+
+::backdrop {
+	@apply bg-gray-500/75;
+}
+
+form {
+	@apply space-y-6;
+}
+
+h1, h2 {
+	@apply m-0;
+}
+
+label {
+	@apply block text-left 	text-sm/6 font-medium text-gray-900;
+}
+
+.logo {
+	@apply w-8;
+}
+
+.ml-error input, .ml-error textarea, .ml-error select {
+  @apply border-red-600;
+}
+
+.ml-error .label-description,
+.ml-error .label-description p,
+.ml-error .label-description p a,
+.ml-error label:first-child {
+  @apply text-red-600;
+}
+
+.ml-subscribe-form {
+	@apply overflow-hidden rounded-lg px-4 pb-4 pt-5 shadow-xl;
+	@apply bg-white sm:w-full sm:max-w-sm;
+}
+
+dialog .close {
+	@apply absolute text-xl top-2 right-5 cursor-pointer;
+}
