@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Newsletter Signup</title>
   <link href="/output.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="/utm.js"></script>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="2a6b3aa4-bce8-4ceb-b501-3fb3d8bb5b1e"></script>
 </head>
 <body>
@@ -38,7 +40,6 @@
     </dialog>
   </main>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
   <script>
     fetch("https://assets.mailerlite.com/jsonp/1221673/forms/140965181152822334/takel")
@@ -63,6 +64,9 @@
       // Close Modal
       $('#close-modal').on('click', closeModal);
       $('#mlb2-20855315').on('click', closeModal);
+
+      // Append UTM Params
+      utmForm($('#mlb2-20855315 form'));
     });
     
     function ml_webform_success_20855315() {
