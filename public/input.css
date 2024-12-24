@@ -7,11 +7,11 @@ body {
 	@apply flex flex-col items-center;
 }
 
-button#open-modal, button.primary, button.loading {
+.btn {
 	@apply rounded-md px-5 py-2.5 shadow-sm;
 	@apply bg-indigo-600 hover:bg-indigo-500;
 	@apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
-	@apply text-2xl font-semibold text-white;
+	@apply text-2xl font-semibold text-white no-underline;
 }
 
 ::backdrop {
@@ -51,5 +51,5 @@ label {
 }
 
 dialog .close {
-	@apply absolute text-xl top-2 right-5 cursor-pointer;
+	@apply absolute text-xl top-0 right-0 px-3 py-1 cursor-pointer z-20;
 }

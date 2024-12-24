@@ -749,12 +749,70 @@ select {
   outline: 1px auto -webkit-focus-ring-color;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
 .hidden {
   display: none;
 }
 
+.size-5 {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.size-8 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
 .w-full {
   width: 100%;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-x-1\.5 {
+  -moz-column-gap: 0.375rem;
+       column-gap: 0.375rem;
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 body {
@@ -1283,7 +1341,7 @@ body {
   align-items: center;
 }
 
-button#open-modal, button.primary, button.loading {
+.btn {
   border-radius: 0.375rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -1296,24 +1354,25 @@ button#open-modal, button.primary, button.loading {
   background-color: rgb(79 70 229 / var(--tw-bg-opacity, 1));
 }
 
-button#open-modal:hover, button.primary:hover, button.loading:hover {
+.btn:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity, 1));
 }
 
-button#open-modal:focus-visible, button.primary:focus-visible, button.loading:focus-visible {
+.btn:focus-visible {
   outline-style: solid;
   outline-width: 2px;
   outline-offset: 2px;
   outline-color: #4f46e5;
 }
 
-button#open-modal, button.primary, button.loading {
+.btn {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  text-decoration-line: none;
 }
 
 ::backdrop {
@@ -1380,9 +1439,14 @@ label {
 
 dialog .close {
   position: absolute;
-  top: 0.5rem;
-  right: 1.25rem;
+  top: 0px;
+  right: 0px;
+  z-index: 20;
   cursor: pointer;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }

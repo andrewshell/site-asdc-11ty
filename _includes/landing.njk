@@ -1,0 +1,64 @@
+<header><img src="/img/code.svg" class="logo" alt="Code With Context"></header>
+
+<main>
+	{% block pagecopy %}
+	<h1>Turn Your Ideas Into Apps (Even if You Don’t Know How To Code)</h1>
+	<p>Sign up to get beginner-friendly tutorials on tools like Bolt.new, Cursor, and GitHub. Perfect for non-technical creators ready to bring their vision to life.</p>
+
+	<button id="open-{{ form_id }}" class="btn" aria-expanded="false">Subscribe to Newsletter</button>
+	{% endblock %}
+
+	<!-- Modal Window -->
+	<dialog 
+		id="mlb2-{{ form_id }}" 
+		class="ml-subscribe-form ml-subscribe-form-{{ form_id }}" 
+		aria-labelledby="title-{{ form_id }}"
+		aria-describedby="desc-{{ form_id }}"
+	>
+	<button class="close" id="close-{{ form_id }}" aria-label="Close modal">&times;</button>
+	{% block modalcopy %}
+	<h2 id="title-{{ form_id }}">Subscribe to Newsletter</h2>
+	<p id="desc-{{ form_id }}">Enter your email below to get started:</p>
+	<form class="ml-block-form" action="{{ form_url }}/subscribe" data-code="" method="post" target="_blank">
+	  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+	    <label for="email-input" class="label-description">Email address</label>
+	    <input autofocus id="email-input" aria-required="true" type="email" class="form-control w-full" name="fields[email]" autocomplete="email">
+	  </div>
+	  <input type="hidden" name="ml-submit" value="1">
+	  <button type="submit" class="btn primary w-full">Subscribe Now!</button>
+	  <button disabled="disabled" type="button" class="btn loading w-full hidden">Loading...</button>
+	  <input type="hidden" name="anticsrf" value="true">
+	</form>
+	{% endblock %}
+	</dialog>
+</main>
+
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+<script>
+	fetch("{{ form_url }}/takel")
+
+    function open{{ form_id }}() {
+      document.getElementById('mlb2-{{ form_id }}').showModal();
+      $('#open-{{ form_id }}').attr('aria-expanded', 'true');
+    }
+
+    function close{{ form_id }}(e) {
+      if (e.target === e.currentTarget || e.target.id === 'close-{{ form_id }}') {
+        document.getElementById('mlb2-{{ form_id }}').close();
+         $('#open-{{ form_id }}').attr('aria-expanded', 'false');
+      }
+    }
+
+    $(document).ready(function() {
+      // Open Modal
+      $('#open-{{ form_id }}').on('click', open{{ form_id }});
+
+      // Close Modal
+      $('#close-{{ form_id }}').on('click', close{{ form_id }});
+      $('#mlb2-{{ form_id }}').on('click', close{{ form_id }});
+    });
+
+	function ml_webform_success_{{ form_id }}() {
+	  window.location.href = '{{ thanks_url }}';
+	}
+</script>
