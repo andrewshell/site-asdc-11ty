@@ -1,7 +1,7 @@
 {
-  "name": "codewithcontext",
+  "name": "site-asdc-11ty",
   "version": "1.0.0",
-  "description": "Code With Context email landing page",
+  "description": "AndrewShell.com email landing page",
   "license": "MIT",
   "author": "Andrew Shell <andrew@andrewshell.org>",
   "type": "module",
